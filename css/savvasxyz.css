@@ -162,3 +162,7 @@ section#head-section h1{
        
 }
 
+#thankyou_message{
+  display: none;  
+}
+

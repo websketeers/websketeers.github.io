@@ -1,10 +1,5 @@
 (function() {
-  function validEmail(email) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
-  }
-
-  function validateHuman(honeypot) {
+    function validateHuman(honeypot) {
     if (honeypot) {  //if hidden form filled up
       console.log("Robot Detected!");
       return true;
@@ -68,15 +63,7 @@
     if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
       return false;
     }
-    
-
-    if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
-      var invalidEmail = form.querySelector(".email-invalid");
-      if (invalidEmail) {
-        invalidEmail.style.display = "block";
-        return false;
-      }
-    } else {
+          
       disableAllButtons(form);
       var url = form.action;
       var xhr = new XMLHttpRequest();
@@ -86,11 +73,11 @@
       xhr.onreadystatechange = function() {
           console.log(xhr.status, xhr.statusText);
           console.log(xhr.responseText);
-          var formElements = form.querySelector("form")
+          var formElements = document.querySelector("form")
           if (formElements) {
             formElements.style.display = "none"; // hide form
           }
-          var thankYouMessage = form.querySelector("#thankyou_message");
+          var thankYouMessage = document.querySelector("#thankyoumessage");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
           }
@@ -101,7 +88,7 @@
           return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
       }).join('&');
       xhr.send(encoded);
-    }
+    
   }
   
   function loaded() {

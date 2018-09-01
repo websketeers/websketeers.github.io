@@ -13,6 +13,14 @@
     text-align: center;
 }
 
+input:invalid {
+  border:  2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
 body section, body nav{
      font-family: ubuntu;     
        }
@@ -39,8 +47,7 @@ section a{
 }
 
 .swords{
-    width:15%;
-    
+    width:15%;    
 }
 
 section .card a:hover{
@@ -124,6 +131,17 @@ section#project-section .card{
 .empty-vertical-space3{    height: 8vh;}
 .empty-vertical-space4{    height: 4vh;}
 
+#thankyoumessage{
+  display: none;  
+    color:snow;
+    text-align: center;
+    margin-bottom: 4vh;
+    padding:2vh;
+    background-color: coral;
+    border-radius: 2%;
+}
+
+
 footer{
     text-align: right; 
     padding-right: 1em;
@@ -162,7 +180,4 @@ section#head-section h1{
        
 }
 
-#thankyou_message{
-  display: none;  
-}
 

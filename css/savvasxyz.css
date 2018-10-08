@@ -163,6 +163,7 @@ color:var(--bg-color);
        
        #navbarResponsive > ul > li.nav-item > a {
            padding-bottom:10px; 
+           color: var(--black);
        }
        
        body nav{
